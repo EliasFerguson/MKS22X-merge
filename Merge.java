@@ -10,4 +10,29 @@ public class Merge {
     int[] right = new int[data.length - half];
 
   }
+  public static void merge(int[] left, int[] right) {
+    int[] merged = new int[left.length + right.length];
+    int i = 0;
+    int i2 = 0;
+    int mergeI = 0;
+    while (mergeI < merged.length) {
+      if (left[i] > right[i2]) {
+        merged[mergeI] = right[i2];
+        i2++;
+        mergeI++;
+      }
+      if (left[i] < right[i2]) {
+        merged[mergeI] = left[i];
+        i++;
+        mergeI++;
+      }
+      if (left[i] == right[i2]) {
+        merged[mergeI] = right[i2];
+        merged[mergeI + 1] = left[i];
+        i++;
+        i2++;
+        mergeI += 2;
+      }
+    }
+  }
 }
