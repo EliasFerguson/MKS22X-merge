@@ -17,7 +17,10 @@ public class Merge {
     mergesort(data, 0, data.length - 1);
   }
   public static void mergesort(int[] data, int lo, int hi) {
-    if (data.length == 1) return;
+    if (data.length == 1) {
+      //System.out.println(data[0]);
+      return;
+    }
     int half = data.length / 2;
     int[] left = new int[half];
     int[] right = new int[data.length - half];
@@ -43,27 +46,31 @@ public class Merge {
     return right;
   }
   public static void merge(int[] left, int[] right, int[] merged) {
-    merged = new int[left.length + right.length];
     int i = 0;
     int i2 = 0;
     int mergeI = 0;
     while (mergeI < merged.length) {
-      if (left[i] > right[i2]) {
-        merged[mergeI] = right[i2];
-        i2++;
-        mergeI++;
-      }
-      if (left[i] < right[i2]) {
-        merged[mergeI] = left[i];
-        i++;
-        mergeI++;
-      }
-      if (left[i] == right[i2]) {
-        merged[mergeI] = right[i2];
-        merged[mergeI + 1] = left[i];
-        i++;
-        i2++;
-        mergeI += 2;
+      System.out.println(i + "I");
+      System.out.println(i2 + "I2");
+      System.out.println(mergeI + "MI");
+      if (i < left.length && i2 < right.length) {
+        if (left[i] > right[i2]) {
+          merged[mergeI] = right[i2];
+          i2++;
+          mergeI++;
+        }
+        else {
+          merged[mergeI] = left[i];
+          i++;
+          mergeI++;
+        }
+        /* if (left[i] == right[i2]) {
+          merged[mergeI] = right[i2];
+          merged[mergeI] = left[i];
+          i++;
+          i2++;
+          mergeI += 2;
+        } */
       }
     }
   }
