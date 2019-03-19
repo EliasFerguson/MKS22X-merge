@@ -54,15 +54,13 @@ public class Merge {
       System.out.println(i2 + "I2");
       System.out.println(mergeI + "MI");
       if (i < left.length && i2 < right.length) {
-        if (left[i] > right[i2]) {
-          merged[mergeI] = right[i2];
-          i2++;
-          mergeI++;
-        }
-        else {
+        if (left[i] < right[i2]) {
           merged[mergeI] = left[i];
           i++;
-          mergeI++;
+        }
+        else {
+          merged[mergeI] = right[i];
+          i2++;
         }
         /* if (left[i] == right[i2]) {
           merged[mergeI] = right[i2];
@@ -72,6 +70,15 @@ public class Merge {
           mergeI += 2;
         } */
       }
+      else if (i < left.length) {
+        merged[mergeI] = left[i];
+        i++;
+      }
+      else {
+        merged[mergeI] = right[i2];
+        i2++;
+      }
+      mergeI++;
     }
   }
   /* public static void insertionSort(int[] ary, int lo, int hi) {
