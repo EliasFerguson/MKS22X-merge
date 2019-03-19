@@ -1,17 +1,25 @@
 import java.util.*;
 public class Merge {
+  public static void main(String[] args) {
+    int[] test = {1, 2, 5, 2, 7, 9 , 2, 6, 9, 10};
+    mergesort(test);
+    for (int i:test) System.out.print(i + " ");
+  }
   public static void mergesort(int[] data) {
     mergesort(data, 0, data.length - 1);
   }
   public static void mergesort(int[] data, int lo, int hi) {
-    if (lo >= hi) return;
+    if (data.length == 1) return;
     int half = data.length / 2;
     int[] left = new int[half];
     int[] right = new int[data.length - half];
-
-  }
-  public static void merge(int[] left, int[] right) {
+    mergesort(left, lo, half);
+    mergesort(right, half, hi);
     int[] merged = new int[left.length + right.length];
+    merge(left, right, merged);
+  }
+  public static void merge(int[] left, int[] right, int[] merged) {
+    merged = new int[left.length + right.length];
     int i = 0;
     int i2 = 0;
     int mergeI = 0;
