@@ -8,7 +8,9 @@ public class Merge {
     int[] left = new int[half];
     int[] right = new int[test.length - half];
     left = initLeft(test, left);
-    for (int i:left) System.out.print(i + " ");
+    right = initRight(test, right);
+    //for (int i:left) System.out.print(i + " ");
+    for (int i:right) System.out.print(i + " ");
   }
   public static void mergesort(int[] data) {
     mergesort(data, 0, data.length - 1);
@@ -34,7 +36,7 @@ public class Merge {
   }
   public static int[] initRight(int[] data, int[] right) {
     int half = data.length / 2;
-    for (int i:right) {
+    for (int i = 0; i < right.length; i++) {
       right[i] = data[i + half];
     }
     return right;
