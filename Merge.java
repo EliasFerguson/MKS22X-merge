@@ -3,13 +3,14 @@ import java.io.*;
 public class Merge {
   public static void main(String[] args) {
     int[] test = {1, 2, 5, 2, 7, 9 , 2, 6, 9, 10, 11};
-    //mergesort(test);
-    int half = test.length / 2;
-    int[] left = new int[half];
-    int[] right = new int[test.length - half];
-    left = initLeft(test, left);
-    right = initRight(test, right);
-    for (int i:left) System.out.print(i + " ");
+    mergesort(test);
+    //int half = test.length / 2;
+    //int[] left = new int[half];
+    //int[] right = new int[test.length - half];
+    //left = initLeft(test, left);
+    //right = initRight(test, right);
+    for (int i:test) System.out.print(i + " ");
+    //for (int i:left) System.out.print(i + " ");
     //for (int i:right) System.out.print(i + " ");
   }
   public static void mergesort(int[] data) {
