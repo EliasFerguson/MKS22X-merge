@@ -1,4 +1,5 @@
 import java.util.*;
+import java.io.*;
 public class Merge {
   public static void main(String[] args) {
     int[] test = {1, 2, 5, 2, 7, 9 , 2, 6, 9, 10};
@@ -13,10 +14,19 @@ public class Merge {
     int half = data.length / 2;
     int[] left = new int[half];
     int[] right = new int[data.length - half];
+    left = initLeft(data, left);
+    
+    //System.out.println(data.toString());
     mergesort(left, lo, half);
     mergesort(right, half, hi);
     int[] merged = new int[left.length + right.length];
     merge(left, right, merged);
+  }
+  public static int[] initLeft(int[] data, int[] left) {
+    for (int i:left) {
+      left[i] = data[i];
+    }
+    return left;
   }
   public static void merge(int[] left, int[] right, int[] merged) {
     merged = new int[left.length + right.length];
