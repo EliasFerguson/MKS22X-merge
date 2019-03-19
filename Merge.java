@@ -3,8 +3,12 @@ import java.io.*;
 public class Merge {
   public static void main(String[] args) {
     int[] test = {1, 2, 5, 2, 7, 9 , 2, 6, 9, 10};
-    mergesort(test);
-    for (int i:test) System.out.print(i + " ");
+    //mergesort(test);
+    int half = test.length / 2;
+    int[] left = new int[half];
+    int[] right = new int[test.length - half];
+    left = initLeft(test, left);
+    for (int i:left) System.out.print(i + " ");
   }
   public static void mergesort(int[] data) {
     mergesort(data, 0, data.length - 1);
@@ -23,7 +27,7 @@ public class Merge {
     merge(left, right, merged);
   }
   public static int[] initLeft(int[] data, int[] left) {
-    for (int i:left) {
+    for (int i = 0; i < left.length; i++) {
       left[i] = data[i];
     }
     return left;
