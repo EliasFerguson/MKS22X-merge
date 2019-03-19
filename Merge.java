@@ -9,7 +9,7 @@ public class Merge {
     //int[] right = new int[test.length - half];
     //left = initLeft(test, left);
     //right = initRight(test, right);
-    for (int i:test) System.out.print(i + " ");
+    System.out.println(Arrays.toString(test));
     //for (int i:left) System.out.print(i + " ");
     //for (int i:right) System.out.print(i + " ");
   }
@@ -17,7 +17,7 @@ public class Merge {
     mergesort(data, 0, data.length - 1);
   }
   public static void mergesort(int[] data, int lo, int hi) {
-    if (data.length == 1) {
+    if (lo >= hi) {
       //System.out.println(data[0]);
       return;
     }
@@ -27,8 +27,8 @@ public class Merge {
     left = initLeft(data, left);
     right = initRight(data, right);
     //System.out.println(data.toString());
-    mergesort(left, lo, half);
-    mergesort(right, half, hi);
+    mergesort(left, 0, left.length - 1);
+    mergesort(right, 0, right.length - 1);
     int[] merged = new int[left.length + right.length];
     merge(left, right, merged);
   }
@@ -59,7 +59,7 @@ public class Merge {
           i++;
         }
         else {
-          merged[mergeI] = right[i];
+          merged[mergeI] = right[i2];
           i2++;
         }
         /* if (left[i] == right[i2]) {
