@@ -17,7 +17,7 @@ public class Merge {
     mergesort(data, 0, data.length - 1);
   }
   public static void mergesort(int[] data, int lo, int hi) {
-    if (data.length == 4) {
+    if (lo >= hi - 4) {
       //System.out.println(data[0]);
       insertionSort(data, 0, data.length);
       return;
