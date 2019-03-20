@@ -22,15 +22,14 @@ public class Merge {
       return;
     }
     int half = data.length / 2;
-    int[] left = new int[half];
-    int[] right = new int[data.length - half];
+    int[] right = new int[half];
+    int[] left = new int[data.length - half];
     left = initLeft(data, left);
     right = initRight(data, right);
     //System.out.println(data.toString());
     mergesort(left, 0, left.length - 1);
     mergesort(right, 0, right.length - 1);
-    int[] merged = new int[left.length + right.length];
-    merge(left, right, merged);
+    merge(left, right, data);
   }
   public static int[] initLeft(int[] data, int[] left) {
     for (int i = 0; i < left.length; i++) {
