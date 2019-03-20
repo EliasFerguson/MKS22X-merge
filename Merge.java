@@ -27,9 +27,9 @@ public class Merge {
     left = initLeft(data, left);
     right = initRight(data, right);
     //System.out.println(data.toString());
-    System.out.println(Arrays.toString(data) + " DATA");
-    System.out.println(Arrays.toString(left)  + " LEFT");
-    System.out.println(Arrays.toString(right)  + " RIGHT");
+    //System.out.println(Arrays.toString(data) + " DATA");
+    //System.out.println(Arrays.toString(left)  + " LEFT");
+    //System.out.println(Arrays.toString(right)  + " RIGHT");
     mergesort(left, 0, left.length - 1);
     mergesort(right, 0, right.length - 1);
     merge(left, right, data);
