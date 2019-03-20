@@ -21,7 +21,8 @@ public class Merge {
       //System.out.println(data[0]);
       return;
     }
-    int half = data.length / 2;
+    int vals = hi - lo + 1;
+    int half = vals / 2;
     int[] right = new int[half];
     int[] left = new int[data.length - half];
     left = initLeft(data, left);
