@@ -20,6 +20,7 @@ public class Merge {
     if (lo >= hi) {
       //System.out.println(data[0]);
       return;
+      
     }
     int vals = hi - lo + 1;
     int half = vals / 2;
