@@ -2,14 +2,14 @@ import java.util.*;
 import java.io.*;
 public class Merge {
   public static void main(String[] args) {
-    int[] test = {4, 3, 2, 1};
-    mergesort(test);
+    //int[] test = {4, 3, 2, 1};
+    //mergesort(test);
     //int half = test.length / 2;
     //int[] left = new int[half];
     //int[] right = new int[test.length - half];
     //left = initLeft(test, left);
     //right = initRight(test, right);
-    System.out.println(Arrays.toString(test));
+    //System.out.println(Arrays.toString(test));
     //for (int i:left) System.out.print(i + " ");
     //for (int i:right) System.out.print(i + " ");
   }
