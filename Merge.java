@@ -3,7 +3,7 @@ import java.io.*;
 public class Merge {
   public static void main(String[] args) {
     int[] test = {4, 3, 2, 1};
-    insertionSort(test, 0, test.length);
+    mergesort(test);
     //int half = test.length / 2;
     //int[] left = new int[half];
     //int[] right = new int[test.length - half];
@@ -17,8 +17,9 @@ public class Merge {
     mergesort(data, 0, data.length - 1);
   }
   public static void mergesort(int[] data, int lo, int hi) {
-    if (lo >= hi) {
+    if (data.length == 4) {
       //System.out.println(data[0]);
+      insertionSort(data, 0, data.length);
       return;
     }
     int half = data.length / 2;
