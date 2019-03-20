@@ -20,15 +20,16 @@ public class Merge {
     if (lo >= hi) {
       //System.out.println(data[0]);
       return;
-      
     }
-    int vals = hi - lo + 1;
-    int half = vals / 2;
-    int[] right = new int[half];
-    int[] left = new int[data.length - half];
+    int half = data.length / 2;
+    int[] left = new int[half];
+    int[] right = new int[data.length - half];
     left = initLeft(data, left);
     right = initRight(data, right);
     //System.out.println(data.toString());
+    System.out.println(Arrays.toString(data) + " DATA");
+    System.out.println(Arrays.toString(left)  + " LEFT");
+    System.out.println(Arrays.toString(right)  + " RIGHT");
     mergesort(left, 0, left.length - 1);
     mergesort(right, 0, right.length - 1);
     merge(left, right, data);
@@ -51,9 +52,9 @@ public class Merge {
     int i2 = 0;
     int mergeI = 0;
     while (mergeI < merged.length) {
-      System.out.println(i + "I");
-      System.out.println(i2 + "I2");
-      System.out.println(mergeI + "MI");
+      //System.out.println(i + "I");
+      //System.out.println(i2 + "I2");
+      //System.out.println(mergeI + "MI");
       if (i < left.length && i2 < right.length) {
         if (left[i] < right[i2]) {
           merged[mergeI] = left[i];
@@ -63,13 +64,6 @@ public class Merge {
           merged[mergeI] = right[i2];
           i2++;
         }
-        /* if (left[i] == right[i2]) {
-          merged[mergeI] = right[i2];
-          merged[mergeI] = left[i];
-          i++;
-          i2++;
-          mergeI += 2;
-        } */
       }
       else if (i < left.length) {
         merged[mergeI] = left[i];
