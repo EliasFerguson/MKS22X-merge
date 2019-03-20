@@ -2,8 +2,8 @@ import java.util.*;
 import java.io.*;
 public class Merge {
   public static void main(String[] args) {
-    int[] test = {1, 2, 5, 2, 7, 9 , 2, 6, 9, 10, 11};
-    mergesort(test);
+    int[] test = {4, 3, 2, 1};
+    insertionSort(test, 0, test.length);
     //int half = test.length / 2;
     //int[] left = new int[half];
     //int[] right = new int[test.length - half];
@@ -76,16 +76,16 @@ public class Merge {
       mergeI++;
     }
   }
-  /* public static void insertionSort(int[] ary, int lo, int hi) {
-  int switcher;
-  for (int i = lo + 1; i < hi; i++) {
-    switcher = ary[i];
-    int i2 = i;
-    while ((i2 > 0) && (switcher < ary[i2 - 1])) {
-      ary[i2] = ary[i2 - 1];
-      i2--;
+  public static void insertionSort(int[] ary, int lo, int hi) {
+    int switcher;
+    for (int i = lo + 1; i < hi; i++) {
+      switcher = ary[i];
+      int i2 = i;
+      while ((i2 > 0) && (switcher < ary[i2 - 1])) {
+        ary[i2] = ary[i2 - 1];
+        i2--;
+      }
+      ary[i2] = switcher;
     }
-    ary[i2] = switcher;
   }
-} */
 }
